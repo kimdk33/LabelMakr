@@ -1,0 +1,46 @@
+[project]
+name = "labelmakr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+cpu = [
+    "torch==2.1.1",
+    "torchaudio==2.1.1",
+    "torchvision==0.16.1",
+]
+cuda = [
+    "torch==2.1.1",
+    "torchaudio==2.1.1",
+    "torchvision==0.16.1",
+]
+rocm = [
+    "torch==2.1.1",
+    "torchaudio==2.1.1",
+    "torchvision==0.16.1",
+]
+xpu = [
+    "torch==2.1.1",
+    "torchaudio==2.1.1",
+    "torchvision==0.16.1",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "extra == 'cpu'" }
+]
+torchaudio = [
+    { index = "pytorch-cpu", marker = "extra == 'cpu'" }
+]
+torchvision = [
+    { index = "pytorch-cpu", marker = "extra == 'cpu'" }
+]
+
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
